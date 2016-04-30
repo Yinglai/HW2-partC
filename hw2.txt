@@ -1,0 +1,19 @@
+What command did you use to configure the remote?
+git remote add origin https://github.com/Yinglai/HW2-partC.git
+
+Instead of creating a new git repository and configuring it with this remote, I could have asked you to git clone the repo from afs. If you had done so, what would the output of git remote -v be?
+$ git remote -v
+origin  https://github.com/Yinglai/afs.git (fetch)
+origin  https://github.com/Yinglai/afs.git (push)
+
+It will show the remote information
+
+
+Run git fetch remotename (substituting your remote name for remotename).
+Did anything appear in your working directory? Why?
+Nothing appeared in my working directory, because the content of the fetch is in the .git folder.
+
+
+Update your local master branch with the remote one, and give the command you used to do so.
+
+
