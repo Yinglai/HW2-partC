@@ -25,5 +25,42 @@ git branch -a
 
 
 Instead, try to checkout the branch so that it creates a local branch based on the remote-tracking branch. 
-$ git pull
-$ git checkout newBranch1
+$ git fetch origin
+$ git checkout newBranch2
+
+
+
+What is a bare repository? 
+A bare repository is the one where no working directory is present.
+
+What makes it different from normal repositories? 
+This is nothing but a directory with your source files, for example, content.docx inside the Workbench directory.
+The contents of the .git directory alone would be the contents of your entire directory if it is a bare repository.
+
+In what situations is it used?
+Think about a situation where there are multiple people
+working on the same file at the same time. Now what happens when you are in the
+process of changing some content in the file from the repository and another person
+working on the same file makes his own changes and pushes it to your repository!
+The contents of your file will be altered, or the file itself may cease to exist based on
+the actions performed from the other end, whereas you would have the file opened
+for manipulation.
+It causes a great deal of confusion in handling such scenarios, so the people
+who have created Git have done the smart thing of avoiding such situations by
+implementing the bare repository concept. This bare repository acts as a middle
+man between all such clones and your source repository, which contains the
+working directory. So you cannot simply push from a clone to the source of the
+clone, if the source contains the working directory.
+
+
+When would this be a good idea as opposed to simply doing git pull remotename branchname?
+If you want to have a chance to examine the changes you’ve just brought into your repository before your working directory is updated, 
+use fetch and merge commands is a good idea as opposed to simply doing git pull remotename branchname.
+
+Briefly discuss remote-tracking branches and their relevance in your answer.
+Remote-tracking branches are references to the state of remote branches. They’re local references that you can’t move; they’re moved automatically for you whenever you do any network communication. Remote-tracking branches act as bookmarks to remind you where the branches in your remote repositories were the last time you connected to them.
+
+
+I didn't ask you to do this, but suppose I asked you to make a commit on the 'other' branch. If I wanted you to push this branch, what command would you use?
+git checkout other
+git cherry-pick HEAD
