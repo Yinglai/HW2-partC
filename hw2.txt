@@ -15,5 +15,15 @@ Nothing appeared in my working directory, because the content of the fetch is in
 
 
 Update your local master branch with the remote one, and give the command you used to do so.
+$ git add .
+$ git commit -m "add hw2.txt"
+$ git push -u origin master
 
 
+How could we (i.e. what command could we use) find all the branches we may have gotten from the remote?
+git branch -a
+
+
+Instead, try to checkout the branch so that it creates a local branch based on the remote-tracking branch. 
+$ git pull
+$ git checkout newBranch1
